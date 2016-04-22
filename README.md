@@ -284,14 +284,20 @@ greatest product. What is the value of this product?
       a.inject(1) {|prod,x| prod*x}
     end
     
-    def get_thirteen(n)
+    def build_original(n)
       original = []
-      set = []
-      sets = []
     
       n.split("").each do |i|
         original.push i.to_i
       end
+    
+      return original
+    end
+    
+    def get_thirteen(n)
+    
+      original = build_original(n)
+      set,sets = [],[]
     
       new = original
       count = new.size
