@@ -1,4 +1,4 @@
-% Created 2016-04-21 Thu 23:11
+% Created 2016-04-21 Thu 23:24
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -261,5 +261,15 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 
 \url{./6.rb}
+
+\begin{verbatim}
+range = (1..100)
+squares = range.map { |i| i*i }
+sum_squares = squares.inject(0) { |sum, i| sum + i }
+
+sum = range.inject(0) { |sum, i| sum + i }
+
+p sum**2 - sum_squares
+\end{verbatim}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}

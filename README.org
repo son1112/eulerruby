@@ -232,4 +232,15 @@ Project Euler Problems
   [[./6.rb]]
 
   #+begin_src ruby :tangle 6.rb
+    range = (1..100)
+    squares = range.map { |i| i*i }
+    sum_squares = squares.inject(0) { |sum, i| sum + i }
+
+    sum = range.inject(0) { |sum, i| sum + i }
+
+    p sum**2 - sum_squares
   #+end_src
+
+  #+RESULTS:
+  : 25164150
+

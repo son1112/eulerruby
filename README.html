@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>README</title>
-<!-- 2016-04-21 Thu 23:11 -->
+<!-- 2016-04-21 Thu 23:24 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -447,7 +447,14 @@ natural numbers and the square of the sum.
 
 <div class="org-src-container">
 
-<pre class="src src-ruby"></pre>
+<pre class="src src-ruby">range = (1..100)
+squares = range.map { |i| i*i }
+sum_squares = squares.inject(0) { |sum, i| sum + i }
+
+sum = range.inject(0) { |sum, i| sum + i }
+
+p sum**2 - sum_squares
+</pre>
 </div>
 </div>
 </div>
