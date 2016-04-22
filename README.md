@@ -2,19 +2,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Problem 1: Multips of 3 and 5</a></li>
+<li><a href="#sec-1">1. Problem 1: Multiples of 3 and 5</a></li>
 <li><a href="#sec-2">2. Problem 2: Even Fibonacci Numbers</a></li>
 <li><a href="#sec-3">3. Problem 3: Largest Prime Factor</a></li>
 <li><a href="#sec-4">4. Problem 4: Largest Palindrome Product</a></li>
 <li><a href="#sec-5">5. Problem 5: Smallest Multiple</a></li>
 <li><a href="#sec-6">6. Problem 6: Sum Square Difference</a></li>
+<li><a href="#sec-7">7. Problem 7: 10001st prime</a></li>
 </ul>
 </div>
 </div>
 
 Project Euler Problems
 
-# Problem 1: Multips of 3 and 5<a id="sec-1" name="sec-1"></a>
+# Problem 1: Multiples of 3 and 5<a id="sec-1" name="sec-1"></a>
 
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we 
 get 3,5,6 and 9. The sum of these multiples is 23.
@@ -230,3 +231,17 @@ natural numbers and the square of the sum.
     sum = range.inject(0) { |sum, i| sum + i }
     
     p sum**2 - sum_squares
+
+# Problem 7: 10001st prime<a id="sec-7" name="sec-7"></a>
+
+By listing the first six prime numbers: 2,3,5,7,11 and 13, we can see that the
+6th prime is 13.
+
+What is the 10001st prime number?
+
+<./7.rb>
+
+    require 'prime'
+    
+    
+    p ((1..105000).select {|p| Prime.prime?(p)})[10000]

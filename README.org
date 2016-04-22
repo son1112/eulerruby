@@ -1,6 +1,6 @@
 Project Euler Problems
 
-* Problem 1: Multips of 3 and 5
+* Problem 1: Multiples of 3 and 5
 
   If we list all the natural numbers below 10 that are multiples of 3 or 5, we 
   get 3,5,6 and 9. The sum of these multiples is 23.
@@ -243,4 +243,24 @@ Project Euler Problems
 
   #+RESULTS:
   : 25164150
+
+* Problem 7: 10001st prime
+
+  By listing the first six prime numbers: 2,3,5,7,11 and 13, we can see that the
+  6th prime is 13.
+
+  What is the 10001st prime number?
+
+  [[./7.rb]]
+
+  #+begin_src ruby :tangle 7.rb
+    require 'prime'
+
+
+    p ((1..105000).select {|p| Prime.prime?(p)})[10000]
+
+  #+end_src
+
+  #+RESULTS:
+  : 104743
 

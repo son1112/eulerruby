@@ -1,4 +1,4 @@
-% Created 2016-04-21 Thu 23:24
+% Created 2016-04-22 Fri 01:03
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -29,7 +29,7 @@
 
 Project Euler Problems
 
-\section{Problem 1: Multips of 3 and 5}
+\section{Problem 1: Multiples of 3 and 5}
 \label{sec-1}
 
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we 
@@ -270,6 +270,23 @@ sum_squares = squares.inject(0) { |sum, i| sum + i }
 sum = range.inject(0) { |sum, i| sum + i }
 
 p sum**2 - sum_squares
+\end{verbatim}
+
+\section{Problem 7: 10001st prime}
+\label{sec-7}
+
+By listing the first six prime numbers: 2,3,5,7,11 and 13, we can see that the
+6th prime is 13.
+
+What is the 10001st prime number?
+
+\url{./7.rb}
+
+\begin{verbatim}
+require 'prime'
+
+
+p ((1..105000).select {|p| Prime.prime?(p)})[10000]
 \end{verbatim}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}
