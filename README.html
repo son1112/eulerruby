@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>README</title>
-<!-- 2016-04-22 Fri 16:08 -->
+<!-- 2016-04-23 Sat 13:28 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -149,6 +149,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-6">6. Problem 6: Sum Square Difference</a></li>
 <li><a href="#sec-7">7. Problem 7: 10001st prime</a></li>
 <li><a href="#sec-8">8. Problem 8: Largest Product in a Series</a></li>
+<li><a href="#sec-9">9. Problem 9: Special Pythagorean Triplet</a></li>
 </ul>
 </div>
 </div>
@@ -564,6 +565,82 @@ def get_thirteen(n)
 end
 
 p get_thirteen(num)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Problem 9: Special Pythagorean Triplet</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+A Pythagorean triplet is a set of three natural numbers, <i>a &lt; b &lt; c</i>, for which,
+</p>
+
+<pre class="example">
+a**2 + b**2 == c**2
+</pre>
+
+<p>
+For example, 
+</p>
+
+<pre class="example">
+3**2 + 4**2 == 9 + 16 == 25 == 5**2
+</pre>
+
+<p>
+There exists exactly one Pythagorean triplet for which <i>a + b + c</i> = 1000
+Find the product <i>abc</i>.
+</p>
+
+<p>
+<a href="./9.rb">./9.rb</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">def triplet?(a,b,c)
+  a**2 + b**2 == c**2
+end
+
+def is_the_one?(a,b,c)
+  a+b+c == 1000
+end
+
+def find_triplets
+
+  range = (2..999)
+  sets = []
+
+  range.each do |i|
+    # i = 1
+    count = 1000
+    # 1000
+
+    while count &gt; 0
+      set = []
+      max = range.size
+
+      a = i
+      b = count-a
+      c = 1000-(b+a)
+
+      if a+b+c==1000 &amp;&amp; (a**2 + b**2 == c**2)
+        set.push a,b,c
+
+        sets &lt;&lt; a*b*c if a*b*c &gt; 0
+      end
+
+      count = count-1
+    end
+  end
+
+  return sets.uniq.first
+
+end
+
+p find_triplets
 </pre>
 </div>
 </div>
