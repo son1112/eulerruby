@@ -1,4 +1,4 @@
-% Created 2016-04-25 Mon 19:23
+% Created 2016-04-25 Mon 19:28
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -438,9 +438,7 @@ require 'prime'
 
 primes = (1..2000000).select {|i| Prime.prime?(i)}
 
-p primes
-
-p primes.inject(1) {|sum,i| sum + i}
+p primes.inject {|sum,i| sum + i}
 \end{verbatim}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}

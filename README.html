@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>README</title>
-<!-- 2016-04-25 Mon 19:23 -->
+<!-- 2016-04-25 Mon 19:28 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -668,9 +668,7 @@ Find the sum of all the primes below two million.
 
 primes = (1..2000000).select {|i| Prime.prime?(i)}
 
-p primes
-
-p primes.inject(1) {|sum,i| sum + i}
+p primes.inject {|sum,i| sum + i}
 </pre>
 </div>
 </div>
