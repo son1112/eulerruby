@@ -1,4 +1,4 @@
-% Created 2016-04-23 Sat 13:28
+% Created 2016-04-25 Mon 19:23
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -422,6 +422,25 @@ def find_triplets
 end
 
 p find_triplets
+\end{verbatim}
+
+\section{Problem 10: Summation of Primes}
+\label{sec-10}
+
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+
+\url{./10.rb}
+
+\begin{verbatim}
+require 'prime'
+
+primes = (1..2000000).select {|i| Prime.prime?(i)}
+
+p primes
+
+p primes.inject(1) {|sum,i| sum + i}
 \end{verbatim}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}

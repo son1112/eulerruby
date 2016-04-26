@@ -397,3 +397,24 @@ Project Euler Problems
 
   #+RESULTS:
 
+* Problem 10: Summation of Primes
+
+  The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+  Find the sum of all the primes below two million.
+
+  [[./10.rb]]
+
+  #+begin_src ruby :tangle 10.rb
+    require 'prime'
+
+    primes = (1..2000000).select {|i| Prime.prime?(i)}
+
+    p primes
+
+    p primes.inject(1) {|sum,i| sum + i}
+  #+end_src
+
+  #+RESULTS:
+  : 142913828923
+

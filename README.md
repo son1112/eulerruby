@@ -11,6 +11,7 @@
 <li><a href="#sec-7">7. Problem 7: 10001st prime</a></li>
 <li><a href="#sec-8">8. Problem 8: Largest Product in a Series</a></li>
 <li><a href="#sec-9">9. Problem 9: Special Pythagorean Triplet</a></li>
+<li><a href="#sec-10">10. Problem 10: Summation of Primes</a></li>
 </ul>
 </div>
 </div>
@@ -370,3 +371,19 @@ Find the product *abc*.
     end
     
     p find_triplets
+
+# Problem 10: Summation of Primes<a id="sec-10" name="sec-10"></a>
+
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+
+<./10.rb>
+
+    require 'prime'
+    
+    primes = (1..2000000).select {|i| Prime.prime?(i)}
+    
+    p primes
+    
+    p primes.inject(1) {|sum,i| sum + i}
